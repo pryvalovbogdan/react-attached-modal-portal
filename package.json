@@ -66,5 +66,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pryvalovbogdan/react-attached-modal-portal.git"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/pryvalovbogdan/react-attached-modal-portal/issues"
+  },
+  "homepage": "https://github.com/pryvalovbogdan/react-attached-modal-portal#readme"
 }
