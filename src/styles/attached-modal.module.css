@@ -1,0 +1,93 @@
+.modal-container {
+  position: relative;
+  display: inline-flex;
+  width: 100%;
+}
+
+.modal-container__wrapper {
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  max-height: calc(100vh - 16px);
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05), 0px 2px 8px 0px rgba(0, 0, 0, 0.10), 0px 16px 20px 2px rgba(0, 0, 0, 0.16);
+}
+
+.attached-modal-portal {
+  background:white;
+  z-index: 10000000;
+  border-radius: 16px 16px 0px 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.attached-modal-wrapper {
+  background: white;
+  z-index: 10000000;
+  max-height: calc(100% - 64px);
+  box-shadow:
+          0px 0px 2px 0px rgba(0, 0, 0, 0.05), 0px 2px 8px 0px rgba(0, 0, 0, 0.10), 0px 16px 20px 2px rgba(0, 0, 0, 0.16);
+  border-radius: 8px;
+  position: absolute;
+  width: 100%;
+}
+
+.modal-container__body {
+  overflow-y: auto;
+}
+
+.modal-container__body::-webkit-scrollbar {
+  width: 20px;
+}
+
+.modal-container__body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.modal-container__body::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+.modal-container__body::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
+
+.icon {
+  display: inline-block;
+  color: inherit;
+  opacity: 1;
+
+  width: 10px;
+  height: 10px;
+
+  border-style: solid;
+  border-color: currentColor;
+  border-width: 2px 2px 0 0;
+}
+
+.icon__previous {
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+.icon__next {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.button {
+  border: none;
+  background: none;
+  padding: 12px;
+}
+
+.button:hover {
+  background: hsla(0, 0%, 100%, 0.2);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}

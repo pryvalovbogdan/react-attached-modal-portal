@@ -1,3 +1,3 @@
-import Counter from './App';
+import AttachedModal from './components/AttachedModalPortal';
 
-export { Counter };
+export { AttachedModal };
