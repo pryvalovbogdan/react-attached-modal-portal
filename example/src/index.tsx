@@ -7,41 +7,40 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 const App = () => {
   const [selected, setSelected] = useState(1);
   const [isOpen, setIsOpen] = useState(false);
-  const ref = useRef(null);
+  const ref = useRef<HTMLButtonElement>(null);
 
   return (
     <AttachedModal
       isOpen={isOpen}
       buttonRect={ref.current?.getBoundingClientRect()}
       setIsOpen={setIsOpen}
-      buttonOpenModal={<button>Open modal</button>}
       OpenModalBtn={
         <button ref={ref} onClick={() => setIsOpen(true)}>
-          Open modal
+          Open
         </button>
       }
       Header={
         <div>
           <div>
-            Modal header
-            <button onClick={() => setIsOpen(false)} aria-label='Close' color='neutral' size='medium' shape='square'>
-              X
-            </button>
+            Header
+            <button onClick={() => setIsOpen(false)}>X</button>
           </div>
         </div>
       }
     >
-      <div>
+      <div style={{ width: '100%' }}>
         {[...new Array(selected)].map((_value, index) => (
           <div key={index}>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget
-            quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel
-            scelerisque nisl consectetur et.
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry
+            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+            make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+            typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+            sheets containing Lorem Ipsum passages, and more recently with desktop publishi
           </div>
         ))}
       </div>
       <div>
-        <button autoFocus onClick={() => setSelected(0)} color='tint'>
+        <button autoFocus onClick={() => setSelected(0)}>
           Clear
         </button>
       </div>
@@ -52,12 +51,9 @@ const App = () => {
 root.render(
   <React.StrictMode>
     <div>
-      <h2>Default counter</h2>
+      <h2>Modal Preview</h2>
     </div>
     <hr />
     <App />
-    <div>
-      <h2>Counter with predefined value</h2>
-    </div>
   </React.StrictMode>,
 );
