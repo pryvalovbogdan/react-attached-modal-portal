@@ -1,5 +1,6 @@
 # react-attached-modal-portal
-React modal which attaches to selected parent
+React modal which attaches to selected parent.
+It will automatically calculate is it enough space under the button and place the modal below or above the button.
 
 [![NPM version][npm-image]][npm-url]
 ![npm-typescript]
