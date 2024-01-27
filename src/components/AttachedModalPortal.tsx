@@ -119,18 +119,21 @@ const AttachedModal = ({
             style={{
               position: canModalFitBelowButton && !isMobileWidth ? 'inherit' : 'absolute',
               bottom: canModalFitBelowButton && !isMobileWidth ? 'auto' : 0,
+              borderRadius: isMobileWidth ? '16px 16px 0px 0px' : 8,
               ...wrapperStyles,
             }}
           >
             {Header && React.isValidElement(Header) && React.cloneElement(Header)}
             <div
               ref={elementRef}
+              className={styles['modal-container__body']}
               onScroll={onBodyScrollHandle}
               style={{
                 ...(withScroll && {
-                  maxHeight: isMobileWidth ? 'calc(100vh - 16px - 320px)' : '40vh',
-                  minHeight: '300px',
+                  maxHeight: isMobileWidth ? 'calc(100vh - 16px - 250px)' : '40vh',
+                  minHeight: 200,
                   overflowY: 'auto',
+                  scrollbarWidth: 'thin',
                 }),
                 ...bodyStyles,
               }}

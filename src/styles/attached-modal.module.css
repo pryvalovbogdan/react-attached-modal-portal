@@ -18,7 +18,6 @@
   z-index: 10000000;
   border-radius: 16px 16px 0px 0px;
   position: absolute;
-  bottom: 0;
   width: 100%;
 }
 
@@ -30,12 +29,30 @@
           0px 0px 2px 0px rgba(0, 0, 0, 0.05), 0px 2px 8px 0px rgba(0, 0, 0, 0.10), 0px 16px 20px 2px rgba(0, 0, 0, 0.16);
   border-radius: 8px;
   position: absolute;
-  width: 680px;
+  width: 100%;
 }
 
 .modal-container__body {
-  min-height: 200px;
   overflow-y: auto;
+}
+
+.modal-container__body::-webkit-scrollbar {
+  width: 20px;
+}
+
+.modal-container__body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.modal-container__body::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+.modal-container__body::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
 }
 
 .icon {

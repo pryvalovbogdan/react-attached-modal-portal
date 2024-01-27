@@ -23,7 +23,6 @@ const AttachedWrapper = forwardRef<HTMLDivElement, IWrapperDesktop>(
           ...wrapperStyles,
         }}
       >
-        wrapper
         {children}
       </div>
     );
