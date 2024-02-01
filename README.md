@@ -1,5 +1,6 @@
 # react-attached-modal-portal
-React modal which attaches to selected parent
+React modal which attaches to selected parent.
+It will automatically calculate is it enough space under the button and place the modal below or above the button.
 
 [![NPM version][npm-image]][npm-url]
 ![npm-typescript]
@@ -8,13 +9,13 @@ React modal which attaches to selected parent
 ## Installation:
 
 ```bash
-npm install react-attached-modal-portal --save-dev
+npm install react-attached-modal-portal --save
 ```
 
 or
 
 ```bash
-yarn add -D react-attached-modal-portal
+yarn add react-attached-modal-portal
 ```
 
 ![React Modal With Scroll And Mobile View](https://github.com/pryvalovbogdan/react-attached-modal-portal/blob/main/public/attached-modal.gif)
@@ -25,7 +26,6 @@ For correct position work of `AttachedModal` you need to pass your `button` and 
 
 ```javascript
 import React, { useRef, useState } from 'react';
-import ReactDOM from 'react-dom/client';
 
 import { AttachedModal } from 'react-attached-modal-portal';
 
