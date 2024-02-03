@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, Context, useRef, useEffect } from 'react';
+import React, { createContext, useContext, Context, useRef, useEffect } from 'react';
 
 interface IAttachedModalContext {
   isMobile: boolean;
@@ -12,24 +12,6 @@ const defaultContext: IAttachedModalContext = {
   canModalFitBelowButton: true,
 };
 export const AttachedModalContext: Context<IAttachedModalContext> = createContext(defaultContext);
-
-export const AttachedModalContextProvider = ({ children }: { children: React.ReactNode }) => {
-  const [isMobile, setIsMobile] = useState<boolean>(false);
-  const [canModalFitBelowButton, setCanModalFitBelowButton] = useState<boolean>(true);
-
-  return (
-    <AttachedModalContext.Provider
-      value={{
-        isMobile,
-        canModalFitBelowButton,
-        setCanModalFitBelowButton,
-        setIsMobile,
-      }}
-    >
-      {children}
-    </AttachedModalContext.Provider>
-  );
-};
 
 export const useAttachedModalContext = (): IAttachedModalContext => {
   const context = useContext(AttachedModalContext);

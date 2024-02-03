@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { AttachedModal, useAttachedModalContext, AttachedModalContextProvider } from 'react-attached-modal-portal';
+
 import './styles/reset.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
