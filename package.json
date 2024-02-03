@@ -1,6 +1,6 @@
 {
   "name": "react-attached-modal-portal",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React modal which attaches to selected parent",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -9,7 +9,7 @@
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
-    "test": "jest --config jestconfig.json",
+    "test": "jest --config jestconfig.json --coverage",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "copy-styles:esm": "copyfiles -u 1 src/**/*.css dist/esm",

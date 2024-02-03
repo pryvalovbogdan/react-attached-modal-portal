@@ -5,6 +5,7 @@ import AttachedWrapper from './AttachedWrapper';
 import Portal from './Portal';
 
 import styles from '../styles/attached-modal.module.css';
+import { useAttachedModalContext } from '../hooks/useAttachedModalContext';
 
 export type Props = {
   children?: React.ReactNode | React.ReactNode[];
@@ -58,6 +59,8 @@ const AttachedModal = ({
     [children, isOpen],
   );
 
+  const { setIsMobile, setCanModalFitBelowButton } = useAttachedModalContext();
+
   const bottomHeight = window.innerHeight - (buttonRect?.bottom || 0);
   const canModalFitBelowButton = bottomHeight >= modalHeight;
 
@@ -98,6 +101,14 @@ const AttachedModal = ({
       setScrollPosition(elementRef.current?.scrollTop || 0);
     };
   }, []);
+
+  useEffect(() => {
+    setCanModalFitBelowButton && setCanModalFitBelowButton(canModalFitBelowButton);
+  }, [canModalFitBelowButton]);
+
+  useEffect(() => {
+    setIsMobile && setIsMobile(isMobileWidth);
+  }, [isMobileWidth]);
 
   const Wrapper = isMobileWidth ? Portal : AttachedWrapper;
 

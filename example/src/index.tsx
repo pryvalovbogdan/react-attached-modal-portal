@@ -1,13 +1,20 @@
 import React, { useRef, useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import { AttachedModal } from 'react-attached-modal-portal';
+import { AttachedModal, useAttachedModalContext, AttachedModalContextProvider } from 'react-attached-modal-portal';
+
+import './styles/reset.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 const App = () => {
   const [selected, setSelected] = useState(5);
   const [isOpen, setIsOpen] = useState(false);
+
   const ref = useRef<HTMLButtonElement>(null);
+
+  const { isMobile, canModalFitBelowButton } = useAttachedModalContext();
+
+  const desktopBackground = canModalFitBelowButton ? 'green' : 'orange';
 
   return (
     <AttachedModal
@@ -33,6 +40,10 @@ const App = () => {
           </button>
         </div>
       }
+      wrapperStyles={{
+        background: isMobile ? 'purple' : desktopBackground,
+        color: isMobile ? 'white' : 'black',
+      }}
     >
       <div style={{ padding: 10, overflow: 'hidden' }}>
         {[...new Array(selected)].map((_value, index) => (
@@ -112,7 +123,9 @@ root.render(
         Lorem Ipsum passages, and more recently with desktop publishi
       </div>
       <hr />
-      <App />
+      <AttachedModalContextProvider>
+        <App />
+      </AttachedModalContextProvider>
     </div>
   </React.StrictMode>,
 );
